@@ -1,12 +1,13 @@
 package com.sebasPapu.sistemainv.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = )
+@Table(name = "ventas_productos")
 public class VentaProducto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private VentaProductoPK id;
     private Integer cantidad;
     private Double total;
