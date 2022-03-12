@@ -23,6 +23,10 @@ public class Venta {
     @JoinColumn(name = "id_cliente", updatable = false, insertable = false)
     private Cliente cliente;
 
+    @ManyToOne
+    @JoinColumn(name = "id_vendedor", updatable = false, insertable = false)
+    private Vendedor vendedor;
+
     public Integer getIdVenta() {
         return idVenta;
     }
