@@ -1,5 +1,7 @@
 package com.sebasPapu.sistemainv.persistence.entity;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,10 @@ public class Cliente {
     private String email;
     private String direccion;
     private Long telefono;
+
+    //Relationship Mapping
+    @OneToMany(mappedBy = "cliente")
+    private List<Venta> ventas;
 
     public String getDireccion() {
         return direccion;

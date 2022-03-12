@@ -6,8 +6,7 @@ import javax.persistence.*;
 @Table(name = "ventas_productos")
 public class VentaProducto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EmbeddedId
     private VentaProductoPK id;
     private Integer cantidad;
     private Double total;
