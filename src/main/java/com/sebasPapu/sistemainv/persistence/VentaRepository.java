@@ -17,4 +17,21 @@ public class VentaRepository {
 
         return (List<Venta>)ventacCrudRepository.findAll();
     }
+
+    public void eliminarVenta(Integer id){
+
+        ventacCrudRepository.deleteById(id);
+
+    }
+
+    public Venta guardarVenta(Venta venta){
+
+        return ventacCrudRepository.save(venta);
+    }
+
+    public List<Venta> obtenerVentasPorVendedor(Integer idVendedor) {
+
+        return (List<Venta>)ventacCrudRepository.findByIdVendedor(idVendedor);
+    }
+    
 }
