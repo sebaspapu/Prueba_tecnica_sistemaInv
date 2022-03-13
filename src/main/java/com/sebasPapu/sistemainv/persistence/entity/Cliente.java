@@ -11,7 +11,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String id;
     private String nombre;
     private String apellidos;
     @Column(name = "correo_electronico")
@@ -41,11 +41,13 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public Integer getId() {
+ 
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -20,11 +20,11 @@ public class ClienteRepository {
         return (List<Cliente>) clienteCrudRepository.findAll();
     }
 
-    public void eliminarCliente(int id) {
+    public void eliminarCliente(String id) {
         clienteCrudRepository.deleteById(id);
     }
 
-    public Optional<Cliente> buscarCliente(int id) {
+    public Optional<Cliente> buscarCliente(String id) {
         return clienteCrudRepository.findById(id);
     }
 

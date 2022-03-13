@@ -24,10 +24,11 @@ public class ServicioDeVenta {
         }).orElse(false);
     }
 
+    /*
     public Venta guardarVenta(Venta venta){
 
         Double total;
         return ventaRepository.guardarVenta(venta);
-    }
+    }*/
 
 }

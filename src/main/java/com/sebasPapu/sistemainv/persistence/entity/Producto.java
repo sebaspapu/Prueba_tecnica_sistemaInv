@@ -26,19 +26,8 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer stock;
     
-    //Relationship Mapping
-    @OneToMany(mappedBy = "producto")
-    private List<VentaProducto> ventaProductos;
-
-
-    public List<VentaProducto> getVentaProductos() {
-        return ventaProductos;
-    }
-
-    public void setVentaProductos(List<VentaProducto> ventaProductos) {
-        this.ventaProductos = ventaProductos;
-    }
-
+    
+    
     public Integer getId() {
         return id;
     }
