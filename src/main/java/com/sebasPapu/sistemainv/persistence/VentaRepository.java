@@ -8,7 +8,9 @@ import com.sebasPapu.sistemainv.persistence.entity.Cliente;
 import com.sebasPapu.sistemainv.persistence.entity.Venta;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class VentaRepository {
 
     @Autowired
@@ -27,6 +29,11 @@ public class VentaRepository {
     public Venta guardarVenta(Venta venta){
 
         return ventacCrudRepository.save(venta);
+    }
+
+    public Optional<Venta> buscarVenta(Integer id){
+
+        return ventacCrudRepository.findById(id);
     }
 
     /*El retorno de este metodo es opcional, ya que no nos devolveria nada si 
