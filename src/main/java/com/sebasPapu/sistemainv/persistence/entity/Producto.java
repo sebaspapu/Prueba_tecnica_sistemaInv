@@ -1,11 +1,14 @@
 package com.sebasPapu.sistemainv.persistence.entity;
 
+import java.util.List;
+
 import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +26,11 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer stock;
     
+    //Relationship Mapping
+    @OneToMany(mappedBy = "producto")
+    private List<VentaProducto> ventaProductos;
+
+
     public Integer getId() {
         return id;
     }

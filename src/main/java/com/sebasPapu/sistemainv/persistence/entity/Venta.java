@@ -1,6 +1,7 @@
 package com.sebasPapu.sistemainv.persistence.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -26,6 +27,10 @@ public class Venta {
     @ManyToOne
     @JoinColumn(name = "id_vendedor", updatable = false, insertable = false)
     private Vendedor vendedor;
+
+    //Relationship Mapping
+    @OneToMany(mappedBy = "venta")
+    private List<VentaProducto> ventaProductos;
 
     public Integer getIdVenta() {
         return idVenta;
