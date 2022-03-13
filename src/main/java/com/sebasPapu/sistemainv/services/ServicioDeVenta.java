@@ -1,6 +1,7 @@
 package com.sebasPapu.sistemainv.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.sebasPapu.sistemainv.persistence.VentaRepository;
 import com.sebasPapu.sistemainv.persistence.entity.Venta;
@@ -22,6 +23,19 @@ public class ServicioDeVenta {
             ventaRepository.eliminarVenta(id);
             return true;
         }).orElse(false);
+    }
+
+    public Optional<Venta> buscarVenta (Integer id){
+        return ventaRepository.buscarVenta(id);
+    }
+
+    public Optional<List<Venta>> obtenerVentasPorVendedor(Integer idVendedor){
+
+        return ventaRepository.obtenerVentasPorVendedor(idVendedor);
+    }
+
+    public Optional<List<Venta>> obtenerVentasPorCliente(Integer idCliente){
+        return ventaRepository.obtenerVentasPorCliente(idCliente);
     }
 
     /*
