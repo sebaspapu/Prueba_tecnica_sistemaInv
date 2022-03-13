@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.sebasPapu.sistemainv.persistence.CRUD.VentaCrudRepository;
+import com.sebasPapu.sistemainv.persistence.entity.Cliente;
 import com.sebasPapu.sistemainv.persistence.entity.Venta;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,12 @@ public class VentaRepository {
     */
     public Optional<List<Venta>> obtenerVentasPorVendedor(Integer idVendedor) {
 
-        return Optional.of((List<Venta>)ventacCrudRepository.findByIdVendedor(idVendedor));
+        return ventacCrudRepository.findByIdVendedor(idVendedor);
     }
     
+    public Optional<List<Venta>> obtenerVentasPorCliente(Integer idCliente) {
+
+        return ventacCrudRepository.findByIdCliente(idCliente);
+    }
+
 }

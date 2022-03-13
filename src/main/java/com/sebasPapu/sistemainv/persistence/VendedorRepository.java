@@ -14,5 +14,23 @@ public class VendedorRepository {
     @Autowired
     VendedorCrudRepository vendedorCrudRepository;
 
-    public void
+    public Optional<List<Vendedor>> obtenerVendedores() {
+        return Optional.of((List<Vendedor>) vendedorCrudRepository.findAll());
+    }
+
+    public Optional<Vendedor> obtenerVendedorPorId(Integer id){
+        return vendedorCrudRepository.findById(id);
+    }
+
+    public void eliminarVendedor(Integer id){
+
+        vendedorCrudRepository.deleteById(id);
+    }
+
+    public Vendedor guardarVendedor(Vendedor vendedor){
+
+        return vendedorCrudRepository.save(vendedor);
+    }
+        
+
 }
