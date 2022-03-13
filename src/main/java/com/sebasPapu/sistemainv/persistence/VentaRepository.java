@@ -21,7 +21,6 @@ public class VentaRepository {
     public void eliminarVenta(Integer id){
 
         ventacCrudRepository.deleteById(id);
-
     }
 
     public Venta guardarVenta(Venta venta){
@@ -29,9 +28,12 @@ public class VentaRepository {
         return ventacCrudRepository.save(venta);
     }
 
-    public List<Venta> obtenerVentasPorVendedor(Integer idVendedor) {
+    /*El retorno de este metodo es opcional, ya que no nos devolveria nada si 
+    el metodo envia un valor nulo. 
+    */
+    public Optional<List<Venta>> obtenerVentasPorVendedor(Integer idVendedor) {
 
-        return (List<Venta>)ventacCrudRepository.findByIdVendedor(idVendedor);
+        return Optional.of((List<Venta>)ventacCrudRepository.findByIdVendedor(idVendedor));
     }
     
 }
