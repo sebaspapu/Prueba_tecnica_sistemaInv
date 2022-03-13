@@ -23,6 +23,14 @@ public class Vendedor {
     private List<Venta> ventas;
    
 
+    public List<Venta> getVentas() {
+        return ventas;
+    }
+
+    public void setVentas(List<Venta> ventas) {
+        this.ventas = ventas;
+    }
+
     public String getEmail() {
         return email;
     }

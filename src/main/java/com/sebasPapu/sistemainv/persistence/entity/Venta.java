@@ -35,6 +35,22 @@ public class Venta {
     private List<VentaProducto> productos;
 
 
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public List<VentaProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<VentaProducto> productos) {
+        this.productos = productos;
+    }
+
     public Integer getIdVenta() {
         return idVenta;
     }

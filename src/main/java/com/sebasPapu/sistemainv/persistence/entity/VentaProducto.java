@@ -22,6 +22,22 @@ public class VentaProducto {
     private Venta venta;
 
 
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public Venta getVenta() {
+        return venta;
+    }
+
+    public void setVenta(Venta venta) {
+        this.venta = venta;
+    }
+
     public VentaProductoPK getId() {
         return id;
     }
