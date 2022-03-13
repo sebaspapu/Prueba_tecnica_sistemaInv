@@ -11,16 +11,14 @@ public class VentaProducto {
     private Integer cantidad;
     private Double total;
 
-
-    @ManyToOne
-    @JoinColumn(name = "id_venta", updatable = false, insertable = false)
-    private Producto producto;
-
     @ManyToOne
     @MapsId("idVenta")
-    @JoinColumn(name = "id_producto", updatable = false, insertable = false)
+    @JoinColumn(name = "id_venta", updatable = false, insertable = false)
     private Venta venta;
 
+    @ManyToOne
+    @JoinColumn(name = "id_producto", updatable = false, insertable = false)
+    private Producto producto;
 
     public Producto getProducto() {
         return producto;

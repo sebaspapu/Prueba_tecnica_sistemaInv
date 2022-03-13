@@ -1,10 +1,12 @@
 package com.sebasPapu.sistemainv.persistence.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class VentaProductoPK {
+public class VentaProductoPK implements Serializable{
 
     @Column(name = "id_venta")
     private Integer idVenta;

@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ProductoCrudRepository extends CrudRepository<Producto,Integer>{
 
-    Optional<List<Producto>> findByCantidadStockLessThan(int cantidad);
+    Optional<List<Producto>> findByStockLessThan(int cantidad);
     Optional<List<Producto>> findByNombreContainingOrderByNombreAsc(String nombre);
 
 }

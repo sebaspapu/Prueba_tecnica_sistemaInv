@@ -2,10 +2,11 @@ package com.sebasPapu.sistemainv.persistence;
 
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.stereotype.Component;
 import com.sebasPapu.sistemainv.persistence.CRUD.ProductoCrudRepository;
 import com.sebasPapu.sistemainv.persistence.entity.Producto;
 
+@Component
 public class ProductoRepository {
 
     ProductoCrudRepository productoCrudRepository;
@@ -19,7 +20,7 @@ public class ProductoRepository {
     }
 
     public  Optional<List<Producto>> obtenerProductosPorStock(Integer cantidad){
-        return productoCrudRepository.findByCantidadStockLessThan(cantidad);
+        return productoCrudRepository.findByStockLessThan(cantidad);
     }
 
     public  Optional<List<Producto>> buscarProductosPorNombre(String nombre){
