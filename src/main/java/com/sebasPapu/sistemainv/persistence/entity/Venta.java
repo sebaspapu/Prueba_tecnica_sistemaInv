@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
+
 @Entity
 @Table(name = "ventas")
 public class Venta {
@@ -29,8 +31,9 @@ public class Venta {
     private Vendedor vendedor;
 
     //Relationship Mapping
-    @OneToMany(mappedBy = "venta")
-    private List<VentaProducto> ventaProductos;
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
+    private List<VentaProducto> productos;
+
 
     public Integer getIdVenta() {
         return idVenta;
