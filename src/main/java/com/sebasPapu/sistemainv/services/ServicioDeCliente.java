@@ -7,6 +7,7 @@ import com.sebasPapu.sistemainv.persistence.ClienteRepository;
 import com.sebasPapu.sistemainv.persistence.entity.Cliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +25,8 @@ public class ServicioDeCliente {
         return clienteRepository.obtenerClientes();
     }
 
-    @GetMapping("/eliminarCliente")
-    public boolean eliminarCliente(String id){
+    @DeleteMapping("/eliminarCliente/{idCliente}")
+    public boolean eliminarCliente(@PathVariable("idCliente") String id){
         return clienteRepository.buscarCliente(id).map(cliente->{
             clienteRepository.eliminarCliente(id);
             return true;
@@ -38,9 +39,6 @@ public class ServicioDeCliente {
     @GetMapping("/buscarCliente/{idCliente}")
     public Optional<Cliente> buscarCliente(@PathVariable("idCliente") String id)
     {
-
         return clienteRepository.buscarCliente(id);
     }
-
-
 }
