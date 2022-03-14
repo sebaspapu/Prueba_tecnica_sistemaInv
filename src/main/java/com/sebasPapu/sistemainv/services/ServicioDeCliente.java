@@ -32,6 +32,9 @@ public class ServicioDeCliente {
         }).orElse(false);
     }
 
+
+    /*La manera de hacerlo utilizando el navegador para obtener
+    los datos: */
     @GetMapping("/buscarCliente/{idCliente}")
     public Optional<Cliente> buscarCliente(@PathVariable("idCliente") String id)
     {
